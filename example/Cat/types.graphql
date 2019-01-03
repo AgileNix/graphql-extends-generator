@@ -1,0 +1,14 @@
+type Cat extends Animal {
+  suit: String,
+  avgClawsLength: Float,
+  loves: [Cat]! @isSame
+}
+
+enum CatRole extends AnimalRole {
+  HARMFUL_LONER
+  HOME_PET
+}
+
+type CatsResponce extends ListResponse<Cat> {
+  serverLoveCats: Boolean!
+}

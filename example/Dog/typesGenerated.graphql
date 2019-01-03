@@ -1,0 +1,9 @@
+type Dog {
+  id: ID! 
+  name: String 
+  role: AnimalRole 
+  bread: String 
+  weight: Int 
+  rewards: [Reward!]!  @owner
+}
+

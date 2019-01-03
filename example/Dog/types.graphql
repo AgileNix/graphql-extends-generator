@@ -1,0 +1,5 @@
+type Dog extends Animal {
+    bread: String,
+    weight: Int,
+    rewards:[Reward!]! @owner
+}

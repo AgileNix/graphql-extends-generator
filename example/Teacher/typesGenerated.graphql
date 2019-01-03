@@ -1,0 +1,10 @@
+type Teacher {
+  id: ID!  @unique
+  role: PersonRole 
+  name: String! 
+  phone: String! 
+  expiriancedIn: [String] 
+  expirience: Int 
+  schoolSubjects: [SchoolSubject!]! 
+}
+

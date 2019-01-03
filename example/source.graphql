@@ -1,0 +1,31 @@
+# for example prisma generated file
+
+enum PersonRole {
+  ADMIN,
+  MANAGER,
+  KING
+}
+
+enum AnimalRole {
+  PACK_LEADER
+  ORDINARY
+}
+
+type Person {
+  id:ID! @unique
+  role: PersonRole @default(value: "MANAGER")
+  name: String!
+  phone: String!
+}
+
+type Animal {
+  id: ID!,
+  name: String,
+  role: AnimalRole @default(value: "ORDINARY")
+}
+
+input PersonCreateInput {
+  role: PersonRole
+  name: String!
+  phone: String!
+}

@@ -1,0 +1,31 @@
+{
+  "name": "graphql-extends-generator",
+  "version": "1.0.0",
+  "description": "A tiny module for creating extended graphQL enums, inputs and types",
+  "main": "src/index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AgileNix/graphql-extends-generator.git"
+  },
+  "keywords": [
+    "graphql",
+    "prisma",
+    "graphql-extends",
+    "extends",
+    "extended",
+    "graphql-extended",
+    "graphql-extends-generator"
+  ],
+  "author": "Anton Iskryzhytskyi and AgileNix team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AgileNix/graphql-extends-generator/issues"
+  },
+  "homepage": "https://github.com/AgileNix/graphql-extends-generator#readme"
+}

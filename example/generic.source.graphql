@@ -1,0 +1,6 @@
+type ListResponse<SomeType> {
+  edges: [SomeType]
+  count: Int
+  page: Int
+  justForourSmallParam: Boolean
+}

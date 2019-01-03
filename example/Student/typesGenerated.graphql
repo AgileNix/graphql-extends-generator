@@ -1,0 +1,18 @@
+type Student {
+  id: ID!  @unique
+  role: PersonRole 
+  name: String! 
+  phone: String! 
+  group: String! 
+  course: Int 
+  marks: [Mark!]! 
+}
+
+input StudentCreateInput {
+  role: PersonRole 
+  name: String! 
+  phone: String! 
+  group: String! 
+  course: Int 
+}
+

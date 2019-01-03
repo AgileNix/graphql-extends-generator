@@ -1,0 +1,24 @@
+type Cat {
+  id: ID! 
+  name: String 
+  role: AnimalRole 
+  suit: String 
+  avgClawsLength: Float 
+  loves: [Cat]!  @isSame
+}
+
+type CatsResponce {
+  edges: [Cat] 
+  count: Int 
+  page: Int 
+  justForourSmallParam: Boolean 
+  serverLoveCats: Boolean! 
+}
+
+enum CatRole {
+ PACK_LEADER
+ ORDINARY
+ HARMFUL_LONER
+ HOME_PET
+}
+

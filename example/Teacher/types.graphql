@@ -1,0 +1,6 @@
+type Teacher extends Person {
+    expiriancedIn: [String]
+    expirience: Int
+    schoolSubjects: [SchoolSubject!]!
+}
+

@@ -1,0 +1,10 @@
+type Student extends Person {
+    group: String!,
+    course: Int,
+    marks: [Mark!]!
+}
+
+input StudentCreateInput extends PersonCreateInput {
+    group: String!
+    course: Int
+}
