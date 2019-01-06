@@ -2,6 +2,7 @@ const Path = require('path');
 const parse = require('./parse');
 const merge = require('./merge');
 const write = require('./write');
+const filterFields = require('./filterFields');
 const { flatten } = require('./helpers');
 
 const findExtendedName = (extendsPath) => {
@@ -12,7 +13,8 @@ const findExtendedName = (extendsPath) => {
 
 const processExtended = async ({ source, extendsPath, prefix, postfix, forbiddenDirectives }) => {
   const extended = await parse(extendsPath);
-  const generated = merge(source, extended);
+  const merged = merge(source, extended);
+  const generated = filterFields(merged);
   const name = `${prefix}${findExtendedName(extendsPath)}${postfix}.graphql`;
   return write({ generated, path: extendsPath, name, forbiddenDirectives });
 };
