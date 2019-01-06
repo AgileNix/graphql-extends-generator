@@ -2,6 +2,7 @@ type Cat extends Animal {
   suit: String,
   avgClawsLength: Float,
   loves: [Cat]! @isSame
+  onlyForBackendField: -
 }
 
 enum CatRole extends AnimalRole {

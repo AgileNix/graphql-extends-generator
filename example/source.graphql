@@ -22,6 +22,7 @@ type Animal {
   id: ID!,
   name: String,
   role: AnimalRole @default(value: "ORDINARY")
+  onlyForBackendField: String!
 }
 
 input PersonCreateInput {
