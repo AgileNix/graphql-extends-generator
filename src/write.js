@@ -4,14 +4,14 @@ const fs = require('fs');
 const buildPath = (path, name) => Path.resolve(path, '..', name);
 
 const objToStr = (o, forbiddenDirectives) => {
-  const str = `${o.fields.reduce((res, val) => {
+  const str = `${o.fields.reduce((res, field) => {
     if (o.type === 'enum') {
-      return `${res}\n ${val.type}`;
+      return `${res}\n ${field.type}`;
     }
-    if (!val.name.length) {
+    if (!field.nameWithParams.length) {
       return res;
     }
-    return `${res}\n  ${val.name}: ${val.type}${val.directives.reduce((r, d) => {
+    return `${res}\n  ${field.nameWithParams}: ${field.type}${field.directives.reduce((r, d) => {
       if (forbiddenDirectives.find(fd => d.indexOf(fd) !== -1)) {
         return r;
       }

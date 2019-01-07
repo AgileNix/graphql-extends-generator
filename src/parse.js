@@ -51,10 +51,17 @@ const handleLineBreaksBeforeDirectives = (source) => {
 };
 
 const convertToField = (line) => {
-  const twoDotsIndex = line.indexOf(':');
+  const firstDirectiveIndex = line.indexOf('@');
+  const twoDotsIndex = firstDirectiveIndex === -1
+    ? line.lastIndexOf(':')
+    : line.lastIndexOf(':', firstDirectiveIndex);
   const directiveIndexes = findAllIndexesOf(line, '@');
   const lineHasDirectives = directiveIndexes.length;
-  const name = line.substring(0, twoDotsIndex).trim();
+  const nameWithParams = line.substring(0, twoDotsIndex).trim();
+  const bracketIndex = nameWithParams.indexOf('(');
+  const name = bracketIndex === -1
+    ? nameWithParams
+    : nameWithParams.substring(0, bracketIndex);
   const type = line.substring(twoDotsIndex + 1, lineHasDirectives ? line.indexOf('@') : line.length)
     .replace(/,/, '')
     .trim();
@@ -65,7 +72,7 @@ const convertToField = (line) => {
     }
     return line.substring(d, arr[i + 1]).trim();
   });
-  return { name, type, directives };
+  return { name, nameWithParams, type, directives };
 };
 
 const findFields = (source, { openTypeIndex, closeTypeIndex }) => {
